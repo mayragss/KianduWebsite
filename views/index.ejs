@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WiTelecom</title>
+    <script src="/js/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="/css/home.css">
+
+    <script src="https://kit.fontawesome.com/fa53d0c90a.js" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+    <section class="nav">        
+        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 call-nav">
+            <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6 call">
+                <p class="call-now call-p">LIGUE: +244 227 222 000</p>
+            </div>
+    
+            <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6 header-social">
+                
+                <div class="col-md-6 nav-icons" style="
+        padding: 0px 0px 0px 1%;
+    ">
+                    <i class="fa-brands header-brands icons fa-facebook"></i>
+                    <i class="fa-brands header-brands icons fa-instagram"></i>
+                    <i class="fa-brands header-brands icons fa-linkedin"></i>
+                    <i class="fa header-brands icons fa-envelope-square" aria-hidden="true"></i>
+                </div>
+    
+                <div class="col-md-6 language-section" style="float:right;padding: 5px 10% 0px 0px;">
+                    <i class="fa-solid header-brands fa-globe fa-globe-en">                        
+                    </i>
+                    <span style="float: right;padding: 3% 0px 0px 0px;font-weight: 700;" onclick="changeLanguage('EN','/en')">ENGLISH</span> 
+                </div>
+    
+            </div>
+    
+            <div class="col-sm-6 col-xs-6">
+                <aside id="language-menu" class="language-menu">
+                    <ul>
+                        <a onclick="changeLanguage('EN','/')"> <li>ENGLISH</li></a>
+                    </ul>
+                </aside>
+                <div id="menuToggle" onclick="showMenu()">
+                    <input type="checkbox" onclick="hideMenu()" />
+    
+                    <span></span>
+                    <span></span>
+                    <span></span>
+    
+                    <ul id="menu">
+                        <a href="#">
+                            <li>Home</li>
+                        </a>
+                        <a href="/#explore">
+                            <li>Sobre Nós</li>
+                        </a>
+                        <a href="/#servicos">
+                            <li>Serviços</li>
+                        </a>
+                        <a href="/#missao">
+                            <li>Missão e Visão</li>
+                        </a>
+                        <a href="/contacto" style="text-decoration: none;color: #232323;">
+                            <li>Contactos</li>
+                        </a>                    
+                       
+                        <a href="/en"> <li>English</li></a>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 menu-options" style="  background-color:  #561970;  padding: 0px 0px 0px 20%;">
+            <label> <a href="/#explore" style="text-decoration: none;color: white;">SOBRE NÓS</a></label>
+            <label><a href="#servicos" style="text-decoration: none;color: white;">SERVIÇOS</a></label>
+            <label><a href="/contacto" style="text-decoration: none;color: white;">CONTACTE-NOS</a></label>        
+        </div>
+        <img src="/images/WiLogoRedesigned.png" class="nav-logo">
+    </section>
+
+    <div class="default-container">
+
+<div style="clear: both;margin: 0px 0px 3% 0px;" ></div>
+        <div id="carousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner" role="listbox">
+                <div class="slide item active ">
+                    <img class="carousel-img" src="/images/notebook.png">
+                </div>
+                <div class="slide item">
+                    <img class="carousel-img" src="/images/tech-bg.png">
+                </div>
+                <div class="slide item">
+                    <img class="carousel-img" src="/images/data-bg.png">
+                </div>
+                <div class="carousel-info">
+                    <h2 class="carousel-title">Descobre um mundo <br>
+                        mais perto de ti</h2>
+                    <p class="carousel-desc">Com os nossos serviços</p>
+                    <button class="carousel-desc-button" style="display: inline-block;">SABER MAIS</button>
+
+                    <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3 carousel-icons">
+                        <a class="arrow-link left carousel-control" href="#carousel" role="button" data-slide="prev">
+                            <img class="arrow" src="/images/icons/Seta1.png">
+                        </a>
+
+                        <a class="arrow-link right carousel-control" href="#carousel" role="button" data-slide="next">
+                            <img class="arrow" src="/images/icons/Seta2.png">
+                        </a>
+
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <script>
+            $(".carousel").attr("data-interval", "2000");
+        </script>
+    </div>
+
+    <section id="explore" class="col-md-12 col-lg-12 col-sm-12 col-xs-12 explore-container">
+        <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12 explore-section">
+            <h2 class="explore-section-h2">Explora o Mundo</h2>
+            <p class="explore-section-p">Com os serviços da Wi Telecom, tem o mundo a seus pés.<br>
+                Conectividade e tecnologia de ponta, prontas para garantir o <br>
+                melhor para si e para os seus clientes, parceiros e <br>
+                colaboradores.
+            </p>
+            <button class="carousel-desc-button" style="display: inline-block;">SABER MAIS</button>
+
+        </div>
+        <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12 explore-img-section">
+            <img class="explore-img" src="/images/cables.png">
+        </div>
+    </section>
+
+    <section id="missao" class="col-md-12 col-lg-12 col-sm-12 col-xs-12 orientation-section">
+        <div class="col-md-5 col-lg-5 col-sm-5 col-xs-12 orientation-aside-1">
+            <h2> Linhas de <span class="clear"></span> Orientação</h2>
+            <p>
+                Os valores da WI Telecom traduzem na sua 
+                visão e ambição para a proposta de valor 
+                do seu portfólio de serviços e produtos.
+                Pretendemos deste modo garantir a oferta
+                elementar de voz fixa, de dados fixos, mas
+                também integrar ofertas inovadoras,
+                suportadas em redes inteligentes de próxima
+                geração.
+            </p>
+            <button class="carousel-desc-button" style="display: inline-block;">SABER MAIS</button>
+        </div>
+        <div class="col-md-7 col-lg-7 col-sm-7 col-xs-12 aside-values">
+            <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6 value">
+                <h3>
+                    Oferta de Serviços Ampla e Diferenciada
+                </h3>
+
+                <p>
+                    Fornecer uma vasta e diferenciada gama de
+                    serviços com a mais recente e inovadora
+                    tecnologia a preços acessíveis e competitivos,
+                    considerando o baixo poder de compra dos
+                    cidadãos angolanos comuns
+
+                </p>
+            </div>
+            <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6 value">
+                <h3>
+                    Emergentes Tecnologias de Ponta
+                </h3>
+
+                <p>
+                    Os serviços da Wi serão baseados nas mais
+                    avançadas tecnologias de transmissão por
+                    fibra óptica, bem como na emergente
+                    tecnologia LTE/5G de Acesso Fixo,
+                    proporcionando maior velocidade, elevados
+                    padrões de disponibilidade e foco
+                    nas tendências internacionais
+
+                </p>
+            </div>
+
+
+            <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6 value">
+                <h3>
+                    Proposta de Valor Focada nos Segmentos Chaves
+                </h3>
+
+                <p>
+                    Ter uma proposta de valor
+                    acrescentado com a sua importância
+                    devidamente reconhecida pelos clientes
+                    alvo, nomeadamente Business to
+                    Customers (B2C), Small Office e Home
+                    Office (SOHO),Business to Business (B2B)
+                    e Business to Government (B2G)
+                </p>
+            </div>
+            <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6 value">
+                <h3>
+                    Promover a Partilha de Infra-estruturas
+                </h3>
+
+                <p>
+                    Apontando para o desenvolvimento de
+                    uma abordagem de partilha de rede
+                    para aceder às infra-estruturas
+                    existentes no país através do
+                    estabelecimento de parcerias com os
+                    principais detentores das infra-
+                    estruturas de rede nacionais
+                </p>
+            </div>
+
+
+            <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6 value">
+                <h3>
+                    Cobertura Nacional Estratégica
+                </h3>
+
+                <p>
+                    Cobertura da rede nacional a todas as
+                    cidades com população significativa,
+                    começando pelas maiores cidades com
+                    potencial para aumentar a penetração
+                    no mercado e depois, cada vez mais,
+                    fornecer uma cobertura nacional de
+                    acordo com os requisitos nacionais
+                </p>
+            </div>
+
+            <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6 value">
+                <h3>
+                    Serviços Acessíveis para a População
+                </h3>
+
+                <p>
+                    Oferecer serviços, acessíveis a toda a
+                    população, que se destaquem pela sua
+                    simplicidade, qualidade e confiança,
+                    bem como por uma conectividade e
+                    padrões fiáveis de inclusão e
+                    desenvolvimento social
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="col-md-12 col-lg-12 col-sm-12 col-xs-12  sobre" style="
+    background-color: #561970;">
+        <div class="services-options">
+            <h2>O que a Wi Telecom tem a oferecer em<br> termos de serviços? </h2>
+        </div>
+    </section>
+
+    <section id="servicos" class="col-md-12 plans-section">
+        <div class="col-md-12">
+            <h2>Oferta de Serviços</h2>
+        </div>
+
+        <div id="internet" class="col-lg-4 col-md-4 col-sm-12 col-xs-12 plan">
+            <h3>Serviço Fixo Básico </h3>
+            <img src="/images/google.png">
+
+            <h4>Banda Larga </h4>
+            <p>
+                Serviço de transmissão de dados <br>
+                Acesso ao Serviço de Internet <br>
+                Serviços de Internet móvel através do<br>
+                posicionamento MVNO
+            </p>
+
+            <h4>Voz</h4>
+            <p>
+                Serviço telefónico num local fixo<br>
+                Serviço de voz através da Internet <br>
+                Serviço de voz móvel (VoLTE) através do<br>
+                posicionamento MVNO
+            </p>
+
+            <h4>Tv</h4>
+            <p>
+                Serviço IPTV<br>
+                Serviço OTT
+            </p>
+        </div>
+
+
+        <div id="conectividade" class="col-lg-4 col-md-4 col-sm-12 col-xs-12 plan">
+            <h3>
+                Conectividade Avançada <h3>
+                    <img src="/images/pc-plan.png">
+
+                    <h4>Banda Larga </h4>
+                    <p>
+                        Serviço de rede privada virtual
+                    </p>
+
+                    <h4>Voz</h4>
+                    <p>
+                        Sistemas de Comunicação Unificada
+                    </p>
+
+                    <h4>Centro de Dados </h4>
+                    <p>
+                        Serviços do Centro de Dados (Cloud, IaaS, PaaS e<br> SaaS)
+                    </p>
+
+                    <h4>Colocação </h4>
+                    <p>
+                        Serviço de revenda de circuitos
+                    </p>
+
+                    <h4>Satélite </h4>
+                    <p>
+                        Serviço via satélite (D1) - dois tipos de serviços:<br>
+                        ouro com banda C e VPN para clientes<br>
+                        empresariais e prata com banda KU/KA para<br>
+                        PME
+                    </p>
+        </div>
+
+
+        <div id="avancado" class="col-lg-4 col-md-4 col-sm-12 col-xs-12 plan">
+            <h3>
+                Serviços Avançados </h3>
+            <img src="/images/credit-plan.png">
+
+            <h4>Centro de Dados </h4>
+            <p>
+                VAS (IoT, comércio electrónico, vigilância e <br>
+                emergência) <br>
+                Gestão da recuperação em caso de catástrofe<br>
+                Gestão de redes empresariais
+            </p>
+
+            <h4>Colocação</h4>
+            <p>
+                Aluguer de infra-estruturas de rede (sítios e<br>
+                centro de dados)
+            </p>
+
+            <h4>Pagamentos Digitais </h4>
+            <p>Serviços de Pagamentos Digitais
+            </p>
+        </div>
+    </section>
+
+    <section class="col-md-12 work-section no-padding">
+        <div class="work-with-us">
+            <h2>
+                Porquê trabalhar connosco?
+            </h2>
+
+            <p>
+
+                Temos uma oferta diferenciada e agregadora, assente numa<br>
+                rede alavancada em<br>
+                tecnologia de última geração que lhe irá permitir a <br>
+                disponibilização de serviços de alta<br>
+                qualidade.
+
+            </p>
+        </div>
+
+        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 subscription-line">
+        </div>
+        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 subscription-section no-padding">
+            <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6 subscription">
+                <h3>SUBSCREVA A NEWSLETTER WI TELECOMUNICAÇÕES:</h3>
+            </div>
+
+            <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6 subscription no-padding">
+                <input type="text" class="subscription-box" placeholder="COLOQUE AQUI O SEU E-MAIL">
+            </div>
+        </div>
+    </section>
+
+    <footer class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+        <div class="col-md-5 col-lg-5 col-sm-5 col-xs-12 aside-logos">
+            <img src="/images/footer-logo.png" class="logo">
+            <img src="/images/google-play-btn.png" class="google">
+        </div>
+
+        <div class="col-md-7 col-lg-7 col-sm-7 col-xs-12 aside-options">
+            <div class="col-md-3 col-lg-3 col-sm-4 col-xs-6 footer-section services">
+                <a href="#servicos" style="text-decoration: none;color: white;">
+                    <h3>Serviços</h3>
+                </a>
+
+                <a class="link" href="/#internet">Produtos e Serviços de<br>
+                    Telecomunicações</a>
+
+                <a class="link" href="/#internet">Internet, Voz e Dados</a>
+                <a class="link" href="/#conectividade">Data Center</a>
+                <a class="link" href="/#conectividade">Serviços de Cloud</a>
+                <a class="link" href="/#avancado">Circuitos Alugados Internacionais</a>
+                <a class="link" href="/#avancado">Serviços de Comunicações<br>Seguras e Unificadas</a>
+                <a class="link" href="/#avancado">Serviços de pagamentos<br> digitais (WI MONEY)</a>
+                <a class="link" href="/#avancado">IOT</a>
+            </div>
+
+            <div class="col-md-3 col-lg-3 col-sm-4 col-xs-3 footer-section cc"><a href="/contacto"
+                style="text-decoration: none;color: white;">
+                <h3> Contacte-nos</h3>
+
+                <h5>Telefone</h5>
+                <a href="tel:+244227222000" class="link">+ 244 227 222 000</a>
+
+                <h4>Endereço</h4>
+                <a id="location" class="link" href="#location">Avª. Talatona, Condomínio Belas Business<br>
+                    Park, Torre Luanda - 2º Andar
+                </a>
+
+                <h4>Email</h4>
+                <a href="mailto:geral@witelekom.ao" class="link">geral@witelekom.ao</a>
+            </a>
+        </div>
+        </div>
+
+        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+            <div class="follow">
+                <h4>Siga a WI nas redes sociais: </h4>
+
+                <i class="fa-brands footer-brands fa-facebook"></i>
+                <i class="fa-brands footer-brands fa-instagram"></i>
+                <i class="fa-brands footer-brands fa-linkedin"></i>
+                <i class="fa-brands footer-brands fa-mail"></i>
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 footer-line"></div>
+                <div class="col-md-6 col-lg-6 col-sm-6 col-xs-7 copyright-1">
+                    <p>© 2022 Termos e Condições | Política de Privacidade</p>
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-6 col-xs-5 copyright-2">
+                    <p>TODOS OS DIREITOS RESERVADOS</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/slides.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,249 @@
+<div class="col-lg-4" id="sidebar_fixed">
+    <div class="box_order mobile_fixed">
+        <div class="head">
+            <h3>Resumo do Pedido</h3>
+            <a href="#0" class="close_panel_mobile"><i class="icon_close"></i></a>
+        </div>
+        <!-- /head -->
+        <div class="main">
+            <ul class="clearfix" id="card">
+                <!--      <li><a href="#0">1x Enchiladas</a><span>$11</span></li> -->
+            </ul>
+            <ul class="clearfix">
+                <li>Subtotal<span>KZS 0</span></li>
+                <li>Taxa de entrega<span>KZS 0</span></li>
+                <li class="total">Total<span id="total"></span></li>
+            </ul>
+            <div class="row opt_order">
+                <div class="col-6">
+                    <label class="container_radio">Entrega
+                        <input type="radio" value="option1" name="opt_order" checked>
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <div class="col-6">
+                    <label class="container_radio">Retirar
+                        <input type="radio" value="option1" name="opt_order">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </div>
+            <script>
+
+                function add(a, b) {
+                    return a + b;
+                }
+
+                function load() {
+                    const order = localStorage.getItem('order');
+                    const list = JSON.parse(order);
+                    if (order != 'null' && order != null) {
+                        //                        console.log('list ', list)
+                        let orderList = typeof list === 'string' ? JSON.parse(list) : list;
+                        console.log('orderList ', orderList)
+
+                        orderList.forEach(e => {
+                            const i = `<li id="card-option-${e.id}"><a onclick="removeById(${e.id})"><i class="icon_minus_alt2"></i>${e.quantity}x ${e.name}</a><span>${e.total}</span></li>`;
+                            //                            console.log('from load ', i)
+                            $("#card").append(i);
+                        });
+                        let total = orderList.map((x) => parseFloat(x.total));
+                        let totalSum = total.reduce(add, 0);
+                        document.getElementById("total").textContent = `KZS ${totalSum}`;
+                    }
+                }
+                load()
+            </script>
+            <!--     <div class="dropdown day">
+                <a href="#" data-bs-toggle="dropdown">Day <span id="selected_day"></span></a>
+                <div class="dropdown-menu">
+                    <div class="dropdown-menu-content">
+                        <h4>Which day delivered?</h4>
+                        <div class="radio_select chose_day">
+                            <ul>
+                                <li>
+                                    <input type="radio" id="day_1" name="day" value="Today">
+                                    <label for="day_1">Today<em>-40%</em></label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="day_2" name="day" value="Tomorrow">
+                                    <label for="day_2">Tomorrow<em>-40%</em></label>
+                                </li>
+                            </ul>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+           -->
+            <!-- 
+            <div class="dropdown time">
+                <a href="#" data-bs-toggle="dropdown">Time <span id="selected_time"></span></a>
+                <div class="dropdown-menu">
+                    <div class="dropdown-menu-content">
+                        <h4>Lunch</h4>
+                        <div class="radio_select add_bottom_15">
+                            <ul>
+                                <li>
+                                    <input type="radio" id="time_1" name="time" value="12.00am">
+                                    <label for="time_1">12.00<em>-40%</em></label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="time_2" name="time" value="08.30pm">
+                                    <label for="time_2">12.30<em>-40%</em></label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="time_3" name="time" value="09.00pm">
+                                    <label for="time_3">1.00<em>-40%</em></label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="time_4" name="time" value="09.30pm">
+                                    <label for="time_4">1.30<em>-40%</em></label>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <h4>Dinner</h4>
+                        <div class="radio_select">
+                            <ul>
+                                <li>
+                                    <input type="radio" id="time_5" name="time" value="08.00pm">
+                                    <label for="time_1">20.00<em>-40%</em></label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="time_6" name="time" value="08.30pm">
+                                    <label for="time_2">20.30<em>-40%</em></label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="time_7" name="time" value="09.00pm">
+                                    <label for="time_3">21.00<em>-40%</em></label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="time_8" name="time" value="09.30pm">
+                                    <label for="time_4">21.30<em>-40%</em></label>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div> -->
+            <div class="btn_1_mobile">
+                <a href="#" class="btn_1 gradient full-width mb_5">Comprar agora</a>
+                <div class="text-center"><small>O pedido será cobrado na próxima tela.</small></div>
+            </div>
+        </div>
+    </div>
+    <!-- /box_order -->
+    <div class="btn_reserve_fixed"><a href="#0" class="btn_1 gradient full-width"> Ver o carrinho</a></div>
+</div>
+
+
+<script>
+    function addCardItem(name, quantity, id, amount, total) {
+        console.log('addCardItem ', name, quantity, id, amount, total)
+        const currentItem = document.getElementById(`card-option-${id}`);
+
+        const currentAmount = parseFloat(quantity) * parseFloat(amount);
+        if (currentItem == null) {
+            let x = `<li id="card-option-${id}"><a onclick="removeById(${id})"><i class="icon_minus_alt2"></i>${quantity}x ${name}</a><span>${currentAmount}</span></li>`;
+            $("#card").append(x);
+        } else {
+            currentItem.innerHTML = `<a onclick="removeById(${id})"><i class="icon_minus_alt2"></i>${quantity}x ${name}</a><span>${currentAmount}</span>`;
+        }
+        document.getElementById("total").textContent = `KZS ${total}`;
+        event.preventDefault();
+    }
+
+    function addToCart(name, value, id) {
+        // TODO: CHECK VOUCHERS ETC - TO CHANGE AMOUNT
+        const amount = parseFloat(value);
+        const item = { 'name': name, 'amount': amount, 'id': id, 'quantity': 1, 'total': amount };
+        const order = localStorage.getItem('order');
+
+        if (order === 'null' || order === null) {
+            const orderList = [item];
+            localStorage.setItem('order', JSON.stringify(orderList));
+
+            addCardItem(item.name, item.quantity, item.id, amount, amount);
+            return true;
+        }
+
+        const list = JSON.parse(order); 
+        let orderList = typeof list === 'string' ? JSON.parse(list) : list; 
+
+        const header = orderList.filter((x) => x.id == id);
+        let total = orderList.map((x) => parseFloat(x.total));
+        let totalSum = total.reduce(add, 0);
+
+        if (header?.length > 0) {
+            orderList.filter((x) => x.id == id).map((i) => { i.quantity += 1, i.total += amount; return i; });
+
+            addCardItem(header[0].name, header[0].quantity++, header[0].id, amount, totalSum+= amount);
+        } else {
+            addCardItem(item.name, item.quantity, item.id, amount, totalSum += amount);
+            orderList.push(item);
+        }
+
+        removeAndAddOrder(JSON.stringify(orderList));
+        return true;
+    }
+
+    function removeAndAddOrder(order) {
+        localStorage.removeItem('order');
+        localStorage.setItem('order', JSON.stringify(order));
+    }
+
+    function addQuantity(id) {
+        const order = localStorage.getItem('order');
+        if (order === 'null' || order === null) {
+            //add to html
+            alert(' não existem produtos no carrinho')
+            return false;
+        }
+        const orderList = JSON.parse(order);
+        const item = orderList?.filter((x) => x.id == id);
+        if (item?.length <= 0) {
+            //add to html
+            alert('o produto selecionado não existe no carrinho')
+            return false;
+        }
+
+        orderList.map((i) => { i.quantity += 1, i.total += i.amount; return i; });
+        removeAndAddOrder(orderList);
+        //add to html
+        return true;
+    }
+
+    function removeById(entry) {
+        const id = parseInt(entry);
+        const order = localStorage.getItem('order');
+
+        if (order === 'null' || order === null) {
+            alert(' não existem produtos no carrinho')
+            return false;
+        }
+
+        const list = JSON.parse(order); 
+        let orderList = typeof list === 'string' ? JSON.parse(list) : list; 
+        const item = orderList?.filter((x) => x.id == id);
+        if (item?.length <= 0) {
+            alert('o produto selecionado não existe no carrinho')
+            return false;
+        }
+
+        document.getElementById(`card-option-${id}`).remove();
+        const mapped = orderList.filter((x) => x.id != id);
+        
+        let total = mapped.map((x) => parseFloat(x.total));
+        let totalSum = total.reduce(add, 0);
+        console.log('totalSum ', totalSum)
+        document.getElementById("total").textContent = `KZS ${totalSum}`;
+
+        localStorage.setItem('order', JSON.stringify(mapped));
+        return true;
+    }
+
+    function removeQuantity(params) {
+
+    }
+</script>
